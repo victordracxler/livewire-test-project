@@ -12,7 +12,7 @@
                     {{ __("You're logged in!") }}
                 </div>
                 <div class="p-6 text-gray-900 dark:text-gray-100" wire:click=''>
-                    {{ __("Mostrar empresas") }}
+                    {{ __("Essa é uma tela padrão. Este texto, não.") }}
                 </div>
             </div>
         </div>

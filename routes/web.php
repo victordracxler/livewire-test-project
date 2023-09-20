@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Livewire\AddUser;
 use App\Livewire\Company;
 use Illuminate\Support\Facades\Route;
 
@@ -19,9 +20,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/showcompany', Company::class)->name('showcompany');
+Route::get('/showcompany', Company::class)->name('showcompany'); //página
 
-Route::get('/companies', [Company::class, 'store']);
+Route::get('/companies', [Company::class, 'store']); //requisição
+
+Route::get('/adduser', AddUser::class)->name('user.add');
 
 
 Route::get('/dashboard', function () {
