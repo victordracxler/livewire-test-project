@@ -24,7 +24,8 @@ Route::get('/showcompany', Company::class)->name('showcompany'); //página
 
 Route::get('/companies', [Company::class, 'store']); //requisição
 
-Route::get('/adduser', AddUser::class)->name('user.add');
+Route::get('/adduser', AddUser::class)->name('user.add.page');
+Route::post('/adduser',[AddUser::class, 'addNewUser'])->name('user.add.store');
 
 
 Route::get('/dashboard', function () {

@@ -4,13 +4,23 @@
             {{ __('Cadastrar novos usuários') }}
         </h2>
     </x-slot>
-    
 
-    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8" style="color: white">
+
+    <div class="max-w-7xl mx-auto sm:px-6 lg:px-20" style="color: white">
+
+        <h2>Dados do usuário</h2>
+        @if (session()->has('success'))
+        @include('alert')
+
+        <x-primary-button wire:click.prevent="resetInput" class="ml-4">Cadastrar outro Usuário</x-primary-button>
+        @else
+        @include('auth.register-third')
+
+        @endif
         
+
         
-            <h2>Sem companhias</h2>
-        
+
     </div>
 
 

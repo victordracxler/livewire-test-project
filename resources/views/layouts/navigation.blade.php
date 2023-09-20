@@ -22,7 +22,7 @@
                     </x-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('user.add')" :active="request()->routeIs('user.add')">
+                    <x-nav-link :href="route('user.add.page')" :active="request()->routeIs('user.add.page')">
                         {{ __('Adicionar Usuários') }}
                     </x-nav-link>
                 </div>
