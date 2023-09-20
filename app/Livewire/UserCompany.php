@@ -12,10 +12,8 @@ use Livewire\Attributes\Layout;
 
 class UserCompany extends Component
 {
-    public $companyList, $company, $selectedCompany;
-    public $usersList, $user, $selectedUser;
-
-    
+    public $companyList, $company, $selectedCompany, $usersList, $user, $selectedUser;
+       
 
     public function mount()
     {
