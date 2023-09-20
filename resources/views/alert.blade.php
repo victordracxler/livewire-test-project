@@ -1,15 +1,4 @@
-{{-- <h1>
-    @if (session()->has('success'))
-        {{ session()->has('success')['title'] }}
-        {{ session()->has('success')['message'] }}
 
-    @endif
-    @if (session()->has('error'))
-    {{ session()->has('error')['title'] }}
-    {{ session()->has('error')['message'] }}
-
-    @endif
-</h1> --}}
 
 @if (session()->has('success'))
     <div class="alert alert-success alert-dismissible" role="alert">

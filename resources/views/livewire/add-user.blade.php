@@ -8,7 +8,7 @@
 
     <div class="max-w-7xl mx-auto sm:px-6 lg:px-20" style="color: white">
 
-        <h2>Dados do usuário</h2>
+        <h2 style="font-size: 20px">Dados do usuário</h2>
         @if (session()->has('success'))
         @include('alert')
 

@@ -1,5 +1,5 @@
 
-    <form >
+   <form class=" dark:bg-gray-800" style="padding: 30px 30px; border-radius: 10px">
         
         
         <!-- Name -->
@@ -31,7 +31,7 @@
 
         <!-- Confirm Password -->
         <div class="mt-4">
-            <x-input-label for="password_confirmation" :value="__('Confirm Password')" />
+            <x-input-label for="password_confirmation" :value="__('Confirmar Senha')" />
 
             <x-text-input id="password_confirmation" class="block mt-1 w-full"
                             type="password"
@@ -44,7 +44,7 @@
         <div class="flex items-center justify-center mt-4">
            
 
-            <x-primary-button  class="ml-4" wire:click.prevent="addNewUser">
+            <x-primary-button  class="ml-4" wire:click.prevent="addNewUser" style="margin-top: 15px">
                 {{ __('Cadastrar novo usuário') }}
             </x-primary-button>
         </div>
