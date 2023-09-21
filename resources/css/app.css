@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.add-company-bttn {
+    background-color: green;
+    width: 150px;
+    height: 60px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+}
+
+.form-select{
+    background-color: #111827;
+    border-radius: 5px;
+    border-color: #333d4d;
+    color: #bbbfc6;
+}
