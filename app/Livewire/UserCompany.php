@@ -6,6 +6,7 @@ use App\Models\Company as CompanyModel;
 use App\Models\User;
 use Livewire\Component;
 use Livewire\Attributes\Layout;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 #[Layout('layouts.livewire')]
 
@@ -22,9 +23,11 @@ class UserCompany extends Component
 
     }
 
-    public function updateUserCompanyId($userId, $companyId)
+    public function updateUserCompanyId()
     {
-
+        $user = User::findOr($this->selectedUser, function(){throw new NotFoundHttpException('Usuário não encontrado');});
+        $user->company_id = $this->selectedCompany;
+        $user->save();
     }
 
     public function handleSelectChangeUser()

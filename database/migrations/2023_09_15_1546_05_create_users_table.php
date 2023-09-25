@@ -21,7 +21,9 @@ return new class extends Migration
             $table->rememberToken();
             $table->text('image')->nullable();
             $table->integer('role_id')->nullable();
-            $table->foreign('role_id')->references('id')->on('roles');        
+            $table->foreign('role_id')->references('id')->on('roles'); 
+            $table->integer('company_id')->nullable();
+            $table->foreign('company_id')->references('id')->on('companies');         
             $table->text('email_signature')->nullable();
             $table->timestamps();
             $table->softDeletes();

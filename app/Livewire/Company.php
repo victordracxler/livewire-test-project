@@ -22,6 +22,7 @@ class Company extends Component
     public $razao, $fantasia, $documento, $phone, $cell, $uf, $city, $address, $complemento, $email, $cep, $representante, $logo, $status, $company_type, $neighborhood;
 
     
+    
     public function mount()
     {
         $this->load();
@@ -86,7 +87,7 @@ class Company extends Component
         {
             throw new ConflictHttpException('Já existe empresa cadastrada com este CPF/CNPJ');
         }
-        
+        //falta validar
         $attributesToFill = $this->only([
             'razao',
             'fantasia',
@@ -106,9 +107,6 @@ class Company extends Component
             'company_type'
         ]);
         
-        // Instruções de depuração para verificar os valores
-        // dd($attributesToFill);
-        
         $company = new CompanyModel;
         $company->fill($attributesToFill);
        
@@ -119,11 +117,12 @@ class Company extends Component
             $company->save();
             
             
-
+            $this->attributesToFill->reset();
             session()->flash('success', [
                 'title' => 'Parabéns!',
                 'message' => 'Cadastrado com sucesso!'
             ]);
+            
             return response()->noContent(201);
             
 
@@ -135,6 +134,32 @@ class Company extends Component
         }
         
 
+    }
+
+    public function resetInput(){
+        $attributesToFill = $this->only([
+            'razao',
+            'fantasia',
+            'documento',
+            'phone',
+            'cell',
+            'uf',
+            'city',
+            'address',
+            'complemento',
+            'neighborhood',
+            'email',
+            'cep',
+            'representante',
+            'logo',
+            'status',
+            'company_type'
+        ]);
+     foreach ($attributesToFill as $value) {
+        $value->reset();
+     }
+
+        
     }
 
     public function render()
